@@ -1,0 +1,156 @@
+/* ===========================
+   larger.css – Responsive styles for wider viewports
+   WDD231 Course Home Page
+   Requires: small.css loaded first
+   =========================== */
+
+@media (min-width: 640px) {
+  /* --- Course Grid: 2 columns on tablets --- */
+  .course-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 900px) {
+  /* --- Header: hide hamburger, show horizontal nav --- */
+  .hamburger {
+    display: none;
+  }
+
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2.5rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .header-inner {
+    padding: 0.9rem 0;
+    border-bottom: none;
+  }
+
+  nav {
+    max-height: none !important;
+    overflow: visible;
+    background: transparent;
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  nav ul {
+    flex-direction: row;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0;
+  }
+
+  nav a {
+    font-size: 0.9rem;
+    padding: 0.5rem 0.9rem;
+  }
+
+  nav a.active {
+    border-left: none;
+    border-bottom: 2px solid var(--accent);
+    border-radius: 0;
+    padding-bottom: 0.4rem;
+  }
+
+  /* --- Main layout: two-column for sections --- */
+  main {
+    padding: 3rem 2.5rem 4rem;
+  }
+
+  h1 {
+    margin-bottom: 2.5rem;
+  }
+
+  /* First two sections side-by-side */
+  .section-intro,
+  .section-goals {
+    flex: 1;
+  }
+
+  .section-courses {
+    width: 100%;
+  }
+
+  /* Three-column course grid on desktop */
+  .course-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* --- Footer: horizontal layout --- */
+  footer {
+    display: flex;
+    /* grid-template-columns: auto 1fr; */
+    align-items: center;
+    padding: 2.5rem 2.5rem;
+    gap: 0.5rem;
+  }
+
+  .footer-social {
+    display: flex;
+    flex-direction: row;
+    gap: 0.90rem;
+  }
+
+  .footer-meta {
+    margin-bottom: 0.25rem;
+
+  }
+}
+
+@media (min-width: 900px) {
+  /* Lay intro + goals side-by-side */
+  main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto;
+    gap: 1.75rem;
+  }
+
+  h1 {
+    grid-column: 1 / -1;
+    margin-bottom: 0;
+  }
+
+  .section-intro {
+    grid-column: 1 / 2;
+  }
+
+  .section-goals {
+    grid-column: 2 / 3;
+  }
+
+  .profile-picture {
+    width: 240px;
+    height: 240px;
+  }
+
+  .section-courses {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (min-width: 1200px) {
+  main {
+    padding: 3rem 3rem 5rem;
+  }
+
+  header {
+    padding: 0 3rem;
+  }
+
+  footer {
+    padding: 2.5rem 3rem;
+  }
+
+  .course-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
