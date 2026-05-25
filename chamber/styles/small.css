@@ -320,7 +320,7 @@ footer p {
   gap: 0.75rem;
 }
 
-.btn-primary {
+.cta-join {
   display: inline-block;
   background: var(--accent);
   color: #0f0e0d;
@@ -332,8 +332,8 @@ footer p {
   border-radius: var(--radius);
   transition: background 0.2s ease, color 0.2s ease;
 }
-.btn-primary:hover,
-.btn-primary:focus-visible {
+.cta-join:hover,
+.cta-join:focus-visible {
   background: var(--accent-hover);
   color: #0f0e0d;
   outline: none;
@@ -695,4 +695,27 @@ footer p {
 .event-list li::before,
 .spotlights-grid li::before {
   content: none;
+}
+/* ── Visually hidden h1 inside main (audit requirement) ── */
+.page-title-sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+  font-size: 0;
+}
+
+/* ── hero-title as p (visual only, not h1) ── */
+p.hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 8vw, 4.5rem);
+  color: var(--text);
+  line-height: 1.0;
+  letter-spacing: -0.02em;
+  margin: 0 0 1rem;
 }

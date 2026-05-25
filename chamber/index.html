@@ -7,7 +7,7 @@
   <meta name="author" content="Japheth James D. Lumanog">
   <meta property="og:title" content="Sava City Chamber of Commerce">
   <meta property="og:description" content="Welcome to the Sava City Chamber of Commerce — connecting local businesses and growing our community.">
-  <meta property="og:image" content="images/chamber-social.svg">
+  <meta property="og:image" content="https://japhethlumanog.github.io/wdd231/chamber/images/chamber-social.svg">
   <meta property="og:url" content="https://japhethlumanog.github.io/wdd231/chamber/index.html">
   <title>Sava City Chamber of Commerce | Home</title>
 
@@ -55,10 +55,10 @@
     <img src="images/hero-image.webp" alt="Sava City skyline" class="hero-img">
     <div class="hero-content">
       <p class="hero-eyebrow">Welcome to</p>
-      <h1 class="hero-title">Sava City<br>Chamber</h1>
+      <p class="hero-title" aria-hidden="true">Sava City<br>Chamber</p>
       <p class="hero-sub">Where local business thrives and community grows together.</p>
       <div class="hero-actions">
-        <a href="#" class="btn-primary">Join the Chamber</a>
+        <a href="#" class="cta-join">Join the Chamber</a>
         <a href="directory.html" class="btn-ghost">Browse Directory</a>
       </div>
     </div>
@@ -66,6 +66,7 @@
 
   <!-- ══ HOME MAIN ══ -->
   <main class="home-main">
+    <h1 class="page-title-sr">Sava City Chamber of Commerce — Home</h1>
 
     <!-- ── Row 1: Weather + Events ── -->
     <div class="home-row">
