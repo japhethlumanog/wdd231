@@ -81,17 +81,10 @@
 }
 }
 
-/* ============================================================
-   HOME PAGE ONLY — responsive additions for index.html
-   Scoped entirely to .hero, .home-*, .spotlights-*, .event-*
-   Nothing here touches .members-grid or any directory class
-   ============================================================ */
-
 @media (min-width: 640px) {
 
   .hero { min-height: 420px; }
 
-  /* weather + events side by side */
   .home-row {
     flex-direction: row;
     align-items: stretch;
@@ -101,7 +94,6 @@
     flex: 1;
   }
 
-  /* 2 spotlight cards */
   .spotlights-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -124,11 +116,9 @@
     gap: 1.5rem;
   }
 
-  /* weather card slightly narrower than events */
   .weather-section { flex: 0.85; }
   .events-section  { flex: 1; }
 
-  /* 3 spotlight cards */
   .spotlights-grid {
     grid-template-columns: repeat(3, 1fr);
   }

@@ -1,9 +1,3 @@
-/* ===================================================
-   spotlights.js  —  Sava City Chamber of Commerce
-   Fetches members.json, filters gold/silver members,
-   picks 2–3 randomly, renders spotlight cards.
-   =================================================== */
-
 const spotlightsEl = document.getElementById('spotlights');
 
 function getLevelInfo(level) {
@@ -55,7 +49,6 @@ async function loadSpotlights() {
     const res = await fetch('data/members.json');
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const data = await res.json();
-    // members.json is a plain array
     const members = Array.isArray(data) ? data : data.members;
     renderSpotlights(members);
   } catch (err) {

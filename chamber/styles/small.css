@@ -252,13 +252,6 @@ footer p {
   outline-offset: 3px;
 }
 
-/* ============================================================
-   HOME PAGE ONLY — index.html styles
-   All rules below use classes that exist ONLY in index.html
-   so they will never affect directory.html
-   ============================================================ */
-
-/* ── Hero ── */
 .hero {
   position: relative;
   background: #0a1016;
