@@ -1,0 +1,65 @@
+[
+  {
+    "name": "Sava Fresh Market",
+    "address": "24 Market Street, Sava City",
+    "phone": "(555) 231-1001",
+    "website": "https://example.com/sava-fresh-market",
+    "image": "sava-fresh-market.svg",
+    "membershipLevel": 3,
+    "description": "A neighborhood grocery store that sells fresh produce and local goods."
+  },
+  {
+    "name": "Riverside Bank",
+    "address": "101 River Road, Sava City",
+    "phone": "(555) 231-1002",
+    "website": "https://example.com/riverside-bank",
+    "image": "riverside-bank.svg",
+    "membershipLevel": 3,
+    "description": "A community bank offering personal and small business financial services."
+  },
+  {
+    "name": "Lumanog Tech Repair",
+    "address": "8 Innovation Lane, Sava City",
+    "phone": "(555) 231-1003",
+    "website": "https://example.com/lumanog-tech-repair",
+    "image": "lumanog-tech-repair.svg",
+    "membershipLevel": 2,
+    "description": "Computer, phone, and tablet repair for families and small offices."
+  },
+  {
+    "name": "Harbor Cafe",
+    "address": "17 Harbor Walk, Sava City",
+    "phone": "(555) 231-1004",
+    "website": "https://example.com/harbor-cafe",
+    "image": "harbor-cafe.svg",
+    "membershipLevel": 2,
+    "description": "A locally owned cafe serving breakfast, coffee, and baked goods."
+  },
+  {
+    "name": "Bright Path Learning",
+    "address": "42 School Avenue, Sava City",
+    "phone": "(555) 231-1005",
+    "website": "https://example.com/bright-path-learning",
+    "image": "bright-path-learning.svg",
+    "membershipLevel": 1,
+    "description": "Tutoring and learning support for elementary and high school students."
+  },
+  {
+    "name": "Green Leaf Landscaping",
+    "address": "62 Garden Drive, Sava City",
+    "phone": "(555) 231-1006",
+    "website": "https://example.com/green-leaf-landscaping",
+    "image": "green-leaf-landscaping.svg",
+    "membershipLevel": 1,
+    "description": "Residential and business landscaping, lawn care, and garden design."
+  },
+  {
+    "name": "Summit Fitness Studio",
+    "address": "15 Wellness Court, Sava City",
+    "phone": "(555) 231-1007",
+    "website": "https://example.com/summit-fitness-studio",
+    "image": "summit-fitness-studio.svg",
+    "membershipLevel": 2,
+    "description": "Group fitness classes, personal training, and wellness coaching."
+  }
+]

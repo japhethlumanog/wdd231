@@ -60,90 +60,23 @@
     padding-bottom: 0.4rem;
   }
 
-  /* --- Main layout: two-column for sections --- */
   main {
     padding: 3rem 2.5rem 4rem;
   }
 
-  h1 {
-    margin-bottom: 2.5rem;
-  }
-
-  /* First two sections side-by-side */
-  .section-intro,
-  .section-goals {
-    flex: 1;
-  }
-
-  .section-courses {
-    width: 100%;
-  }
-
-  /* Three-column course grid on desktop */
-  .course-grid {
+  .members-grid {
     grid-template-columns: repeat(3, 1fr);
   }
 
-  /* --- Footer: horizontal layout --- */
-  footer {
+  .members-list {
     display: flex;
-    /* grid-template-columns: auto 1fr; */
-    align-items: center;
-    padding: 2.5rem 2.5rem;
-    gap: 0.5rem;
   }
 
-  .footer-social {
-    display: flex;
-    flex-direction: row;
-    gap: 0.90rem;
-  }
-
-  .footer-meta {
-    margin-bottom: 0.25rem;
-
-  }
-}
-
-@media (min-width: 900px) {
-  /* Lay intro + goals side-by-side */
-  main {
+  .members-list .member-card {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto auto;
-    gap: 1.75rem;
-  }
-
-  h1 {
-    grid-column: 1 / -1;
-    margin-bottom: 0;
-  }
-
-  .section-intro {
-    grid-column: 1 / 2;
-  }
-
-  .section-goals {
-    grid-column: 2 / 3;
-  }
-
-  .profile-picture {
-    width: 240px;
-    height: 240px;
-  }
-
-  .section-courses {
-    grid-column: 1 / -1;
-  }
-}
-
-@media (min-width: 1200px) {
-  main {
-    padding: 3rem 3rem 5rem;
-  }
-
-  header {
-    padding: 0 3rem;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 1rem;
+    align-items: center;
   }
 
   footer {
@@ -155,9 +88,5 @@
 
   .footer-meta {
     text-align: right;
-  }
-
-  .course-grid {
-    grid-template-columns: repeat(4, 1fr);
   }
 }

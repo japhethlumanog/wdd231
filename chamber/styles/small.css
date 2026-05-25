@@ -1,34 +1,16 @@
-/* ===========================
-   small.css – Mobile-first base styles
-   WDD231 Course Home Page
-   =========================== */
-
-/* --- CSS Variables / Design Tokens --- */
 :root {
   --bg: #0f0e0d;
   --surface: #1a1916;
   --surface-2: #222119;
   --text: #e8e4dc;
-  --text-muted: #9e9a90;
+  --text-muted: #b9b2a6;
   --accent: #d4a853;
   --accent-hover: #e8c070;
   --accent-light: rgba(212, 168, 83, 0.12);
-  --border: rgba(212, 168, 83, 0.2);
-  --completed: #4caf82;
-  --completed-bg: rgba(76, 175, 130, 0.1);
+  --border: rgba(212, 168, 83, 0.24);
+  --font-display: "DM Serif Display", Georgia, serif;
+  --font-body: "DM Sans", Arial, sans-serif;
   --radius: 8px;
-  --radius-lg: 16px;
-  --font-display: 'DM Serif Display', Georgia, serif;
-  --font-body: 'DM Sans', system-ui, sans-serif;
-  --shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
-  --transition: 0.25s ease;
-}
-
-/* --- Reset & Base --- */
-*, *::before, *::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0; 
 }
 
 html {
@@ -60,7 +42,6 @@ a:hover, a:focus-visible {
   color: var(--accent-hover);
 }
 
-/* --- Header --- */
 header {
   background-color: var(--surface);
   border-bottom: 1px solid var(--border);
@@ -95,7 +76,6 @@ header {
   letter-spacing: 0.01em;
 }
 
-/* --- Hamburger --- */
 .hamburger {
   background: none;
   border: 1px solid var(--border);
@@ -180,43 +160,33 @@ nav a.active {
   border-left: 3px solid var(--accent);
 }
 
-/* --- Main --- */
 main {
-  padding: 1.5rem 1.25rem 3rem;
-  max-width: 1200px;
   margin: 0 auto;
+  max-width: 1100px;
+  padding: 1.5rem 1.25rem 3rem;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  line-height: 1.2;
 }
 
 h1 {
-  font-family: var(--font-display);
-  font-size: clamp(2rem, 6vw, 3.5rem);
-  color: var(--text);
-  margin-bottom: 2rem;
-  line-height: 1.1;
-  letter-spacing: -0.02em;
-}
-
-/* --- Sections --- */
-section {
-  margin-bottom: 3rem;
-  padding: 1.75rem;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
+  font-size: 2.2rem;
+  margin: 0 0 1.5rem;
 }
 
 h2 {
-  font-family: var(--font-display);
-  font-size: clamp(1.3rem, 4vw, 2rem);
   color: var(--accent);
-  margin-bottom: 1rem;
-  line-height: 1.2;
+  font-size: 1.5rem;
+  margin: 0 0 0.75rem;
 }
 
 p {
   color: var(--text-muted);
-  font-size: 0.95rem;
-  line-height: 1.7;
+  margin: 0;
 }
 
 ul {
@@ -242,146 +212,89 @@ ul li::before {
   font-size: 0.85rem;
 }
 
-/* --- Profile Section --- */
-.section-goals {
-  text-align: center;
+section {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  margin-bottom: 1.5rem;
+  padding: 1.25rem;
+}
+
+.view-controls {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 1rem;
+}
+
+.view-button {
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text-muted);
+  font-weight: 600;
+  padding: 0.45rem 0.9rem;
+}
+
+.view-button:hover,
+.view-button:focus,
+.view-button.active {
+  background: var(--accent);
+  color: #0f0e0d;
+}
+
+.members-grid {
+  display: grid;
   gap: 1rem;
 }
 
-.profile-picture {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 3px solid var(--accent);
-  margin: 0.5rem 0;
-}
-
-.profile-name {
-  font-family: var(--font-display);
-  font-size: 1.5rem;
-  color: var(--accent);
-  margin-top: 0.5rem;
-}
-
-/* --- Filter Buttons --- */
-.filter-buttons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.6rem;
-  margin-bottom: 1.5rem;
-}
-
-.filter-btn {
-  background: transparent;
-  border: 1px solid var(--border);
-  color: var(--text-muted);
-  font-family: var(--font-body);
-  font-size: 0.85rem;
-  font-weight: 500;
-  padding: 0.45rem 1rem;
-  border-radius: 100px;
-  cursor: pointer;
-  transition: all var(--transition);
-  letter-spacing: 0.02em;
-}
-
-.filter-btn:hover,
-.filter-btn:focus-visible {
-  border-color: var(--accent);
-  color: var(--accent);
-  background: var(--accent-light);
-  outline: none;
-}
-
-.filter-btn.active {
-  background: var(--accent);
-  border-color: var(--accent);
-  color: #0f0e0d;
-  font-weight: 600;
-}
-
-/* --- Course Grid --- */
-.course-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 0.85rem;
-}
-
-.course-card {
+.member-card {
   background: var(--surface-2);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 1rem 1.15rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.75rem;
-  transition: border-color var(--transition), transform var(--transition);
+  padding: 1rem;
 }
 
-.course-card:hover {
-  border-color: var(--accent);
-  transform: translateY(-1px);
+.member-card img {
+  background: #f4efe6;
+  border-radius: var(--radius);
+  height: 115px;
+  margin-bottom: 0.8rem;
+  object-fit: contain;
+  padding: 0.75rem;
+  width: 100%;
 }
 
-.course-card.completed {
-  border-color: var(--completed);
-  background: var(--completed-bg);
-}
-
-.course-card .course-name {
-  font-weight: 600;
-  font-size: 0.9rem;
+.member-card h3 {
   color: var(--text);
-  letter-spacing: 0.01em;
+  font-size: 1.25rem;
+  margin: 0 0 0.35rem;
 }
 
-.course-card .course-credits {
-  font-size: 0.8rem;
-  color: var(--text-muted);
-  white-space: nowrap;
+.member-card p {
+  font-size: 0.93rem;
+  margin-bottom: 0.25rem;
 }
 
-.course-card .badge {
-  font-size: 0.7rem;
-  font-weight: 600;
-  padding: 0.2rem 0.55rem;
-  border-radius: 100px;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  white-space: nowrap;
-}
-
-.course-card.completed .badge {
-  background: var(--completed);
-  color: #0f0e0d;
-}
-
-.course-card:not(.completed) .badge {
-  background: var(--border);
-  color: var(--text-muted);
-}
-
-/* --- Credit Total --- */
-.credit-total {
-  margin-top: 1.25rem;
-  padding-top: 1.25rem;
-  border-top: 1px solid var(--border);
-  font-size: 0.9rem;
-  color: var(--text-muted);
-  text-align: right;
-}
-
-.credit-total strong {
+.member-level {
   color: var(--accent);
-  font-size: 1rem;
+  font-weight: 600;
 }
 
-/* --- Footer --- */
+.members-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.members-list .member-card {
+  display: block;
+}
+
+.members-list .member-card img,
+.members-list .member-card .member-description {
+  display: none;
+}
+
 footer {
   background: var(--surface);
   border-top: 1px solid var(--border);
@@ -427,22 +340,4 @@ footer {
   font-size: 0.82rem;
   color: var(--text-muted);
   line-height: 1.5;
-}
-
-/* --- Accessibility --- */
-:focus-visible {
-  outline: 2px solid var(--accent);
-  outline-offset: 3px;
-}
-
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0,0,0,0);
-  white-space: nowrap;
-  border: 0;
 }

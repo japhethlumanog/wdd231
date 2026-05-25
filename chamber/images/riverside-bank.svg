@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 160">
+  <rect width="300" height="160" rx="10" fill="#f4efe6"/>
+  <path d="M54 72h88L98 38 54 72Z" fill="#d4a853"/>
+  <rect x="62" y="76" width="72" height="40" fill="#1a1916"/>
+  <path d="M62 122h72" stroke="#d4a853" stroke-width="8"/>
+  <text x="158" y="76" fill="#1a1916" font-family="Arial, sans-serif" font-size="24" font-weight="700">Riverside</text>
+  <text x="158" y="106" fill="#6b6255" font-family="Arial, sans-serif" font-size="18">Bank</text>
+</svg>

@@ -3,28 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="WDD231 Web Frontend Development I – Course Home Page for tracking progress through the Web and Computer Programming certificate.">
+  <meta name="description" content="A directory of local businesses and members of the Sava City Chamber of Commerce.">
   <meta name="author" content="Japheth James D. Lumanog">
-  <title>WDD231 | Web Frontend Development I</title>
+  <meta property="og:title" content="Sava City Chamber of Commerce Directory">
+  <meta property="og:description" content="Find local businesses and chamber members in Sava City.">
+  <meta property="og:image" content="images/chamber-social.svg">
+  <meta property="og:url" content="https://japhethlumanog.github.io/wdd231/chamber/directory.html">
+  <title>Sava City Chamber of Commerce | Directory</title>
 
-  <!-- Google Fonts -->
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-  <!-- CSS -->
-   <link rel="stylesheet" href="styl0es/normalize.css">
+  <link rel="stylesheet" href="styles/normalize.css">
   <link rel="stylesheet" href="styles/small.css">
-  <link rel="stylesheet" href="styles/large.css">
+  <link rel="stylesheet" href="styles/larger.css">
 
-  <!-- JavaScript --> 
   <script src="scripts/navigation.js" defer></script>
-  <script src="scripts/date.js" defer></script>
-  <script src="scripts/course.js" defer></script>
+  <script src="scripts/dates.js" defer></script>
+  <script src="scripts/members.js" defer></script>
 </head>
 <body>
 
-  <header>
+   <header>
     <div class="header-inner">
       <div class="logo-group">
         <img src="images/site-logo.svg" alt="Site Logo" class="site-logo">
@@ -37,41 +40,33 @@
     </div>
     <nav id="nav-menu">
       <ul>
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="chamber/index.html">Chamber</a></li>
-        <li><a href="final/index.html">Final</a></li>
+        <li><a href="directory.html" class="active">Directory</a></li>
+        <li><a href="#">Discover</a></li>
+        <li><a href="#">Join</a></li>
+        <li><a href="#">About</a></li>
       </ul>
     </nav>
   </header>
 
   <main>
-    <h1>Home</h1>
+    <h1>Business Directory</h1>
 
-    <section class="section-intro">
-      <h2 id="intro-heading">About This Course</h2>
-      <p>WDD231 – Web Frontend Development I builds on foundational HTML, CSS, and JavaScript skills to create responsive, accessible, and performant web experiences. This page tracks my progress through the Web and Computer Programming certificate.</p>
+    <section class="directory-intro">
+      <h2>Local Member Businesses</h2>
+      <p>Explore chamber members, their services, and contact information. Use the buttons below to switch between card view and list view.</p>
     </section>
 
-    <section class="section-goals">
-      <h2 id="goals-heading">My Profile</h2>
-      <img src="images/profile-picture.webp" alt="Japheth James D. Lumanog" class="profile-picture">
-      <p class="profile-name">Japheth James D. Lumanog</p>
-    </section>
-
-    <section class="section-courses">
-      <h2 id="courses-heading">Certificate Courses</h2>
-      <div class="filter-buttons" role="group">
-        <button class="filter-btn active" data-filter="all">All Courses</button>
-        <button class="filter-btn" data-filter="WDD">WDD Courses</button>
-        <button class="filter-btn" data-filter="CSE">CSE Courses</button>
+    <section class="directory-section">
+      <div class="view-controls" aria-label="Directory view options">
+        <button id="grid-view" class="view-button active" type="button">Grid</button>
+        <button id="list-view" class="view-button" type="button">List</button>
       </div>
-      <div id="course-cards" class="course-grid"></div>
-      <p class="credit-total">Total Credits: <strong id="credit-count">0</strong></p>
+
+      <div id="members" class="members-grid" aria-live="polite"></div>
     </section>
   </main>
 
   <footer>
-    
 
     <div class="footer-meta">
       <p id="copyright"></p>
@@ -92,11 +87,10 @@
         Twitter/X
       </a>
     </div>
-
+    
     <div class="footer-modified">
       <p id="lastModified"></p>
     </div>
   </footer>
-
 </body>
 </html>

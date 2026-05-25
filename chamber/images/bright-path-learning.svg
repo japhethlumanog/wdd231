@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 160">
+  <rect width="300" height="160" rx="10" fill="#f4efe6"/>
+  <path d="M58 48h42c18 0 30 10 30 26v46H88c-18 0-30-10-30-26V48Z" fill="#d4a853"/>
+  <path d="M88 48h42v72H88c-18 0-30-10-30-26" fill="none" stroke="#1a1916" stroke-width="6"/>
+  <text x="152" y="72" fill="#1a1916" font-family="Arial, sans-serif" font-size="23" font-weight="700">Bright Path</text>
+  <text x="152" y="102" fill="#6b6255" font-family="Arial, sans-serif" font-size="18">Learning</text>
+</svg>

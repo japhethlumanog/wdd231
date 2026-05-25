@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 160">
+  <rect width="300" height="160" rx="10" fill="#f4efe6"/>
+  <path d="M58 62h68v32a28 28 0 0 1-28 28H86a28 28 0 0 1-28-28V62Z" fill="#d4a853"/>
+  <path d="M126 72h14a16 16 0 0 1 0 32h-14" fill="none" stroke="#1a1916" stroke-width="8"/>
+  <text x="158" y="76" fill="#1a1916" font-family="Arial, sans-serif" font-size="24" font-weight="700">Harbor</text>
+  <text x="158" y="106" fill="#6b6255" font-family="Arial, sans-serif" font-size="18">Cafe</text>
+</svg>
