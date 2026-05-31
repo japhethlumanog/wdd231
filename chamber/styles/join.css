@@ -1,0 +1,514 @@
+/* ══════════════════════════════════════════════
+   join.css — Membership Application Page
+   Sava City Chamber of Commerce
+   Extends small.css / larger.css variables
+   ══════════════════════════════════════════════ */
+
+/* ── Page header banner ── */
+.page-banner {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  padding: 2.5rem 1.25rem 2rem;
+  text-align: center;
+}
+
+.page-banner .banner-eyebrow {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.4rem;
+}
+
+.page-banner h1 {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 5vw, 3rem);
+  color: var(--text);
+  margin: 0 0 0.5rem;
+  line-height: 1.1;
+}
+
+.page-banner p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+/* ── Join layout wrapper ── */
+.join-layout {
+  margin: 0 auto;
+  max-width: 1100px;
+  padding: 2rem 1.25rem 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* ── Form section ── */
+.form-section {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.75rem 1.5rem;
+}
+
+.form-section-title {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  color: var(--text);
+  margin: 0 0 0.3rem;
+  line-height: 1.2;
+}
+
+.form-section-sub {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  margin: 0 0 1.75rem;
+}
+
+/* ── Form fields ── */
+.membership-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.field-row {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--text);
+}
+
+label span.label-text {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+label span.required-star {
+  color: var(--accent);
+  font-size: 0.85em;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select,
+textarea {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 0.93rem;
+  padding: 0.65rem 0.9rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(212, 168, 83, 0.14);
+  outline: none;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: rgba(185, 178, 166, 0.45);
+}
+
+select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23d4a853' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.85rem center;
+  background-size: 12px;
+  padding-right: 2.5rem;
+  cursor: pointer;
+}
+
+select option {
+  background: var(--surface-2);
+  color: var(--text);
+}
+
+textarea {
+  min-height: 110px;
+  resize: vertical;
+  line-height: 1.55;
+}
+
+/* validation states */
+input:invalid:not(:placeholder-shown),
+select:invalid:not(:placeholder-shown) {
+  border-color: rgba(210, 80, 80, 0.6);
+}
+
+input:valid:not(:placeholder-shown) {
+  border-color: rgba(80, 190, 120, 0.5);
+}
+
+/* ── Submit button ── */
+.btn-submit {
+  align-self: flex-start;
+  background: var(--accent);
+  border: none;
+  border-radius: var(--radius);
+  color: #0f0e0d;
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  padding: 0.8rem 2rem;
+  text-transform: uppercase;
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.btn-submit:hover,
+.btn-submit:focus-visible {
+  background: var(--accent-hover);
+  outline: none;
+  transform: translateY(-1px);
+}
+
+.btn-submit:active {
+  transform: translateY(0);
+}
+
+/* ── Membership cards section ── */
+.cards-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.cards-section-title {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  color: var(--text);
+  margin: 0 0 0.25rem;
+  line-height: 1.2;
+}
+
+.cards-section-sub {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  margin: 0 0 0.75rem;
+}
+
+.membership-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+/* ── Card animation on load ── */
+@keyframes card-rise {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.membership-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem 1rem 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  opacity: 0;
+  animation: card-rise 0.5s ease forwards;
+  transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.membership-card:nth-child(1) { animation-delay: 0.05s; }
+.membership-card:nth-child(2) { animation-delay: 0.15s; }
+.membership-card:nth-child(3) { animation-delay: 0.25s; }
+.membership-card:nth-child(4) { animation-delay: 0.35s; }
+
+.membership-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 24px rgba(212, 168, 83, 0.1);
+}
+
+.card-tier-badge {
+  display: inline-block;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 3px 9px;
+  border-radius: 100px;
+  align-self: flex-start;
+  margin-bottom: 0.1rem;
+}
+
+.badge-np      { background: rgba(100,180,140,0.12); color: #6db892; border: 1px solid rgba(100,180,140,0.3); }
+.badge-bronze  { background: rgba(176,118,70,0.14); color: #c98a50; border: 1px solid rgba(176,118,70,0.35); }
+.badge-silver  { background: rgba(160,170,180,0.12); color: #aab4be; border: 1px solid rgba(160,170,180,0.3); }
+.badge-gold    { background: rgba(212,168,83,0.14); color: var(--accent); border: 1px solid rgba(212,168,83,0.35); }
+
+.card-title {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  color: var(--text);
+  margin: 0;
+  line-height: 1.25;
+}
+
+.card-desc {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin: 0;
+  flex: 1;
+}
+
+.card-fee {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--accent);
+  margin: 0;
+}
+
+.btn-learn-more {
+  display: inline-block;
+  margin-top: 0.25rem;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text-muted);
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  padding: 0.45rem 0.85rem;
+  text-transform: uppercase;
+  transition: border-color 0.2s, color 0.2s, background 0.2s;
+  align-self: flex-start;
+}
+
+.btn-learn-more:hover,
+.btn-learn-more:focus-visible {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--accent-light);
+  outline: none;
+}
+
+/* ── Modal (<dialog>) ── */
+dialog {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: calc(var(--radius) * 1.5);
+  color: var(--text);
+  font-family: var(--font-body);
+  max-width: 460px;
+  width: calc(100% - 2rem);
+  padding: 0;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+}
+
+dialog::backdrop {
+  background: rgba(15, 14, 13, 0.75);
+  backdrop-filter: blur(3px);
+}
+
+.modal-inner {
+  padding: 1.75rem 1.5rem 1.5rem;
+}
+
+.modal-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.modal-title-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.modal-title {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  color: var(--text);
+  margin: 0;
+  line-height: 1.1;
+}
+
+.modal-close {
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text-muted);
+  cursor: pointer;
+  font-size: 1.1rem;
+  line-height: 1;
+  padding: 0.3rem 0.6rem;
+  flex-shrink: 0;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.modal-close:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.modal-divider {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 0 0 1.25rem;
+}
+
+.modal-benefits-label {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin: 0 0 0.75rem;
+}
+
+.modal-benefits {
+  list-style: none;
+  margin: 0 0 1.25rem;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.modal-benefits li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.45;
+}
+
+.modal-benefits li::before {
+  content: "✦";
+  color: var(--accent);
+  font-size: 0.65rem;
+  flex-shrink: 0;
+  margin-top: 0.2rem;
+}
+
+.modal-fee-note {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  padding: 0.75rem 1rem;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  margin-bottom: 1.25rem;
+}
+
+.modal-fee-note strong {
+  color: var(--accent);
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+}
+
+.btn-modal-close {
+  background: var(--accent);
+  border: none;
+  border-radius: var(--radius);
+  color: #0f0e0d;
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  padding: 0.6rem 1.4rem;
+  text-transform: uppercase;
+  transition: background 0.2s ease;
+}
+
+.btn-modal-close:hover {
+  background: var(--accent-hover);
+}
+
+/* ── Desktop layout ── */
+@media (min-width: 900px) {
+  .page-banner {
+    padding: 3rem 2.5rem 2.5rem;
+    text-align: left;
+  }
+
+  .page-banner p {
+    margin: 0;
+  }
+
+  .join-layout {
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 2.5rem 2.5rem 5rem;
+    gap: 2rem;
+  }
+
+  .form-section {
+    flex: 1.1;
+    min-width: 0;
+  }
+
+  .cards-section {
+    flex: 0.9;
+    min-width: 280px;
+    position: sticky;
+    top: 80px;
+  }
+
+  .membership-cards {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .field-row {
+    flex-direction: row;
+  }
+
+  .field-row label {
+    flex: 1;
+  }
+}
+
+@media (min-width: 1100px) {
+  .join-layout {
+    padding: 3rem 3rem 5rem;
+    gap: 2.5rem;
+  }
+}

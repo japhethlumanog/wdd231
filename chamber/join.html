@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Apply to join the Sava City Chamber of Commerce. Choose a membership level and fill out our quick application form.">
+  <meta name="author" content="Japheth James D. Lumanog">
+  <meta property="og:title" content="Join | Sava City Chamber of Commerce">
+  <meta property="og:description" content="Become a member of the Sava City Chamber of Commerce and grow your business with us.">
+  <meta property="og:image" content="https://japhethlumanog.github.io/wdd231/chamber/images/chamber-social.svg">
+  <meta property="og:url" content="https://japhethlumanog.github.io/wdd231/chamber/join.html">
+  <title>Join | Sava City Chamber of Commerce</title>
+
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles/normalize.css">
+  <link rel="stylesheet" href="styles/small.css">
+  <link rel="stylesheet" href="styles/larger.css">
+  <link rel="stylesheet" href="styles/join.css">
+
+  <script src="scripts/navigation.js" defer></script>
+  <script src="scripts/dates.js" defer></script>
+  <script src="scripts/join.js" defer></script>
+</head>
+<body>
+
+  <!-- ══ HEADER ══ -->
+  <header>
+    <div class="header-inner">
+      <div class="logo-group">
+        <img src="images/site-logo.svg" alt="Site Logo" class="site-logo">
+        <span class="site-name">Japheth James D. Lumanog</span>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <nav id="nav-menu">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="directory.html">Directory</a></li>
+        <li><a href="#">Discover</a></li>
+        <li><a href="join.html" class="active">Join</a></li>
+        <li><a href="#">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ══ PAGE BANNER ══ -->
+  <div class="page-banner">
+    <p class="banner-eyebrow">Membership Application</p>
+    <h1>Join the Chamber</h1>
+    <p>Become part of Sava City's business community. Fill out the form below and select a membership level that works for your organization.</p>
+  </div>
+
+  <!-- ══ MAIN JOIN LAYOUT ══ -->
+  <main class="join-layout" id="main-content">
+
+    <!-- ── APPLICATION FORM ── -->
+    <section class="form-section" aria-labelledby="form-heading">
+      <h2 class="form-section-title" id="form-heading">Application Form</h2>
+      <p class="form-section-sub">Fields marked with <span aria-label="required">✦</span> are required.</p>
+
+      <form method="get" action="thankyou.html" class="membership-form" novalidate>
+
+        <!-- First + Last Name -->
+        <div class="field-row">
+          <label>
+            <span class="label-text">
+              First Name <span class="required-star" aria-hidden="true">✦</span>
+            </span>
+            <input
+              type="text"
+              name="fname"
+              title="Enter your first name"
+              autocomplete="given-name"
+              placeholder="e.g. Maria"
+              required>
+          </label>
+
+          <label>
+            <span class="label-text">
+              Last Name <span class="required-star" aria-hidden="true">✦</span>
+            </span>
+            <input
+              type="text"
+              name="lname"
+              title="Enter your last name"
+              autocomplete="family-name"
+              placeholder="e.g. Santos"
+              required>
+          </label>
+        </div>
+
+        <!-- Organizational Title -->
+        <label>
+          <span class="label-text">Organizational Title</span>
+          <input
+            type="text"
+            name="org-title"
+            title="Your title within the organization — letters, hyphens, and spaces only, minimum 7 characters"
+            autocomplete="organization-title"
+            placeholder="e.g. General Manager"
+            pattern="[A-Za-z\-\s]{7,}">
+        </label>
+
+        <!-- Email -->
+        <label>
+          <span class="label-text">
+            Email Address <span class="required-star" aria-hidden="true">✦</span>
+          </span>
+          <input
+            type="email"
+            name="email"
+            title="Enter a valid email address"
+            autocomplete="email"
+            placeholder="example@email.com"
+            required>
+        </label>
+
+        <!-- Mobile Phone -->
+        <label>
+          <span class="label-text">
+            Mobile Phone <span class="required-star" aria-hidden="true">✦</span>
+          </span>
+          <input
+            type="tel"
+            name="mobile"
+            title="Enter your mobile phone number"
+            autocomplete="tel"
+            placeholder="+63 917 123 4567"
+            required>
+        </label>
+
+        <!-- Organization Name -->
+        <label>
+          <span class="label-text">
+            Business / Organization Name <span class="required-star" aria-hidden="true">✦</span>
+          </span>
+          <input
+            type="text"
+            name="org-name"
+            title="Enter the full name of your business or organization"
+            autocomplete="organization"
+            placeholder="e.g. Sava Fresh Market"
+            required>
+        </label>
+
+        <!-- Membership Level -->
+        <label>
+          <span class="label-text">
+            Membership Level <span class="required-star" aria-hidden="true">✦</span>
+          </span>
+          <select name="membership" title="Select a membership level" required>
+            <option value="" disabled selected>Select a membership level…</option>
+            <option value="np">NP Membership — Non-Profit (Free)</option>
+            <option value="bronze">Bronze Membership</option>
+            <option value="silver">Silver Membership</option>
+            <option value="gold">Gold Membership</option>
+          </select>
+        </label>
+
+        <!-- Business Description -->
+        <label>
+          <span class="label-text">Business / Organization Description</span>
+          <textarea
+            name="description"
+            title="Briefly describe your business or organization"
+            placeholder="Tell us about your business — what you do, who you serve, and what you hope to gain from membership…"></textarea>
+        </label>
+
+        <!-- Hidden Timestamp -->
+        <input
+          type="hidden"
+          id="timestamp"
+          name="timestamp">
+
+        <!-- Submit -->
+        <input
+          type="submit"
+          class="btn-submit"
+          value="Submit Application">
+
+      </form>
+    </section>
+
+    <!-- ── MEMBERSHIP CARDS ── -->
+    <aside class="cards-section" aria-labelledby="cards-heading">
+      <h2 class="cards-section-title" id="cards-heading">Membership Levels</h2>
+      <p class="cards-section-sub">Choose the tier that fits your organization. Click "Learn More" for full details.</p>
+
+      <div class="membership-cards">
+
+        <!-- NP Card -->
+        <div class="membership-card">
+          <span class="card-tier-badge badge-np">Non-Profit</span>
+          <h3 class="card-title">NP Membership</h3>
+          <p class="card-desc">Perfect for registered non-profit organizations looking to connect with the community.</p>
+          <p class="card-fee">No Fee</p>
+          <button
+            class="btn-learn-more"
+            aria-haspopup="dialog"
+            onclick="openModal('modal-np')">
+            Learn More
+          </button>
+        </div>
+
+        <!-- Bronze Card -->
+        <div class="membership-card">
+          <span class="card-tier-badge badge-bronze">Bronze</span>
+          <h3 class="card-title">Bronze Membership</h3>
+          <p class="card-desc">Entry-level membership for small businesses ready to grow their local presence.</p>
+          <p class="card-fee">Annual Fee: ₱2,500</p>
+          <button
+            class="btn-learn-more"
+            aria-haspopup="dialog"
+            onclick="openModal('modal-bronze')">
+            Learn More
+          </button>
+        </div>
+
+        <!-- Silver Card -->
+        <div class="membership-card">
+          <span class="card-tier-badge badge-silver">Silver</span>
+          <h3 class="card-title">Silver Membership</h3>
+          <p class="card-desc">Enhanced visibility and premium advertising opportunities for growing businesses.</p>
+          <p class="card-fee">Annual Fee: ₱6,000</p>
+          <button
+            class="btn-learn-more"
+            aria-haspopup="dialog"
+            onclick="openModal('modal-silver')">
+            Learn More
+          </button>
+        </div>
+
+        <!-- Gold Card -->
+        <div class="membership-card">
+          <span class="card-tier-badge badge-gold">Gold</span>
+          <h3 class="card-title">Gold Membership</h3>
+          <p class="card-desc">Top-tier membership with maximum exposure, VIP access, and priority placement.</p>
+          <p class="card-fee">Annual Fee: ₱12,000</p>
+          <button
+            class="btn-learn-more"
+            aria-haspopup="dialog"
+            onclick="openModal('modal-gold')">
+            Learn More
+          </button>
+        </div>
+
+      </div>
+    </aside>
+
+  </main>
+
+  <!-- ══ FOOTER ══ -->
+  <footer>
+    <div class="footer-meta">
+      <p id="copyright"></p>
+      <p>Japheth James D. Lumanog &bull; Philippines</p>
+    </div>
+
+    <div class="footer-social">
+      <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+        GitHub
+      </a>
+      <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        LinkedIn
+      </a>
+      <a href="https://twitter.com/yourusername" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" focusable="false"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L1.254 2.25H8.08l4.259 5.63 5.905-5.63zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        Twitter/X
+      </a>
+    </div>
+
+    <div class="footer-modified">
+      <p id="lastModified"></p>
+    </div>
+  </footer>
+
+  <!-- ══ MODALS ══ -->
+
+  <!-- NP Modal -->
+  <dialog id="modal-np" aria-labelledby="modal-np-title" aria-modal="true">
+    <div class="modal-inner">
+      <div class="modal-header">
+        <div class="modal-title-group">
+          <span class="card-tier-badge badge-np">Non-Profit</span>
+          <h3 class="modal-title" id="modal-np-title">NP Membership</h3>
+        </div>
+        <button class="modal-close" aria-label="Close NP Membership details" onclick="closeModal('modal-np')">✕</button>
+      </div>
+      <hr class="modal-divider">
+      <p class="modal-benefits-label">Member Benefits</p>
+      <ul class="modal-benefits">
+        <li>Free annual membership — no fees for registered non-profits</li>
+        <li>Community networking at Chamber-hosted events</li>
+        <li>Event participation and volunteer opportunities</li>
+        <li>Access to the Chamber member directory listing</li>
+        <li>Monthly Chamber newsletter and announcements</li>
+      </ul>
+      <p class="modal-fee-note"><strong>Annual Fee: Free</strong> — for officially registered non-profit organizations only.</p>
+      <div class="modal-footer">
+        <button class="btn-modal-close" onclick="closeModal('modal-np')">Got It</button>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Bronze Modal -->
+  <dialog id="modal-bronze" aria-labelledby="modal-bronze-title" aria-modal="true">
+    <div class="modal-inner">
+      <div class="modal-header">
+        <div class="modal-title-group">
+          <span class="card-tier-badge badge-bronze">Bronze</span>
+          <h3 class="modal-title" id="modal-bronze-title">Bronze Membership</h3>
+        </div>
+        <button class="modal-close" aria-label="Close Bronze Membership details" onclick="closeModal('modal-bronze')">✕</button>
+      </div>
+      <hr class="modal-divider">
+      <p class="modal-benefits-label">Member Benefits</p>
+      <ul class="modal-benefits">
+        <li>Business directory listing on the Chamber website</li>
+        <li>Monthly networking event invitations</li>
+        <li>Discounts on Chamber-hosted training sessions</li>
+        <li>Access to the Chamber member resources portal</li>
+        <li>Monthly Chamber newsletter and announcements</li>
+      </ul>
+      <p class="modal-fee-note"><strong>Annual Fee: ₱2,500</strong> — billed once per year.</p>
+      <div class="modal-footer">
+        <button class="btn-modal-close" onclick="closeModal('modal-bronze')">Got It</button>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Silver Modal -->
+  <dialog id="modal-silver" aria-labelledby="modal-silver-title" aria-modal="true">
+    <div class="modal-inner">
+      <div class="modal-header">
+        <div class="modal-title-group">
+          <span class="card-tier-badge badge-silver">Silver</span>
+          <h3 class="modal-title" id="modal-silver-title">Silver Membership</h3>
+        </div>
+        <button class="modal-close" aria-label="Close Silver Membership details" onclick="closeModal('modal-silver')">✕</button>
+      </div>
+      <hr class="modal-divider">
+      <p class="modal-benefits-label">Member Benefits</p>
+      <ul class="modal-benefits">
+        <li>Homepage spotlight — featured in the Member Spotlights section</li>
+        <li>Premium advertising placement in Chamber publications</li>
+        <li>Discounted event registration fees</li>
+        <li>Business skills workshops and exclusive webinars</li>
+        <li>All Bronze-level benefits included</li>
+      </ul>
+      <p class="modal-fee-note"><strong>Annual Fee: ₱6,000</strong> — billed once per year.</p>
+      <div class="modal-footer">
+        <button class="btn-modal-close" onclick="closeModal('modal-silver')">Got It</button>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Gold Modal -->
+  <dialog id="modal-gold" aria-labelledby="modal-gold-title" aria-modal="true">
+    <div class="modal-inner">
+      <div class="modal-header">
+        <div class="modal-title-group">
+          <span class="card-tier-badge badge-gold">Gold</span>
+          <h3 class="modal-title" id="modal-gold-title">Gold Membership</h3>
+        </div>
+        <button class="modal-close" aria-label="Close Gold Membership details" onclick="closeModal('modal-gold')">✕</button>
+      </div>
+      <hr class="modal-divider">
+      <p class="modal-benefits-label">Member Benefits</p>
+      <ul class="modal-benefits">
+        <li>Featured homepage placement — prominently displayed every visit</li>
+        <li>VIP access to all Chamber events and galas</li>
+        <li>Dedicated social media promotion on Chamber channels</li>
+        <li>Exclusive sponsorship opportunities for Chamber events</li>
+        <li>Priority advertising position in all Chamber materials</li>
+        <li>All Silver-level benefits included</li>
+      </ul>
+      <p class="modal-fee-note"><strong>Annual Fee: ₱12,000</strong> — billed once per year.</p>
+      <div class="modal-footer">
+        <button class="btn-modal-close" onclick="closeModal('modal-gold')">Got It</button>
+      </div>
+    </div>
+  </dialog>
+
+</body>
+</html>

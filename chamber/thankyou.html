@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Thank you for applying to join the Sava City Chamber of Commerce. Your application has been received.">
+  <meta name="author" content="Japheth James D. Lumanog">
+  <title>Thank You | Sava City Chamber of Commerce</title>
+
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles/normalize.css">
+  <link rel="stylesheet" href="styles/small.css">
+  <link rel="stylesheet" href="styles/larger.css">
+  <link rel="stylesheet" href="styles/join.css">
+
+  <style>
+    /* ── Thank-you page specific styles ── */
+    .thankyou-main {
+      margin: 0 auto;
+      max-width: 680px;
+      padding: 3rem 1.25rem 5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.75rem;
+    }
+
+    .thankyou-hero {
+      text-align: center;
+      padding: 2.5rem 1.5rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+    }
+
+    .thankyou-icon {
+      font-size: 3rem;
+      line-height: 1;
+      margin-bottom: 1rem;
+    }
+
+    .thankyou-hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 5vw, 2.8rem);
+      color: var(--text);
+      margin: 0 0 0.6rem;
+      line-height: 1.1;
+    }
+
+    .thankyou-hero p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      max-width: 420px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    .submission-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+
+    .submission-card-header {
+      padding: 1.1rem 1.5rem;
+      background: var(--surface-2);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .submission-card-header h2 {
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      color: var(--text);
+      margin: 0;
+      line-height: 1;
+    }
+
+    .submission-card-label {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    .submission-rows {
+      padding: 0.5rem 0;
+    }
+
+    .submission-row {
+      display: flex;
+      align-items: baseline;
+      gap: 1rem;
+      padding: 0.85rem 1.5rem;
+      border-bottom: 1px solid rgba(212, 168, 83, 0.1);
+    }
+
+    .submission-row:last-child {
+      border-bottom: none;
+    }
+
+    .submission-key {
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      min-width: 130px;
+      flex-shrink: 0;
+    }
+
+    .submission-val {
+      font-size: 0.93rem;
+      color: var(--text);
+      word-break: break-word;
+    }
+
+    .submission-val.empty {
+      color: var(--text-muted);
+      font-style: italic;
+    }
+
+    .thankyou-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      justify-content: center;
+    }
+
+    @media (min-width: 900px) {
+      .thankyou-main {
+        padding: 3.5rem 2.5rem 6rem;
+      }
+    }
+  </style>
+
+  <script src="scripts/navigation.js" defer></script>
+  <script src="scripts/dates.js" defer></script>
+</head>
+<body>
+
+  <!-- ══ HEADER ══ -->
+  <header>
+    <div class="header-inner">
+      <div class="logo-group">
+        <img src="images/site-logo.svg" alt="Site Logo" class="site-logo">
+        <span class="site-name">Japheth James D. Lumanog</span>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <nav id="nav-menu">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="directory.html">Directory</a></li>
+        <li><a href="#">Discover</a></li>
+        <li><a href="join.html">Join</a></li>
+        <li><a href="#">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ══ MAIN ══ -->
+  <main class="thankyou-main" id="main-content">
+
+    <!-- Hero confirmation -->
+    <div class="thankyou-hero">
+      <div class="thankyou-icon" aria-hidden="true">✦</div>
+      <h1>Application Received</h1>
+      <p>Thank you for applying to join the Sava City Chamber of Commerce. A member of our team will be in touch shortly to confirm your membership.</p>
+    </div>
+
+    <!-- Submitted data card -->
+    <div class="submission-card" aria-label="Your submitted application details">
+      <div class="submission-card-header">
+        <div>
+          <p class="submission-card-label">Submitted Information</p>
+          <h2>Your Application Details</h2>
+        </div>
+      </div>
+      <div class="submission-rows" id="submission-rows">
+        <!-- populated by inline script below -->
+      </div>
+    </div>
+
+    <!-- Actions -->
+    <div class="thankyou-actions">
+      <a href="index.html" class="cta-join">Back to Home</a>
+      <a href="directory.html" class="btn-ghost">Browse Directory</a>
+    </div>
+
+  </main>
+
+  <!-- ══ FOOTER ══ -->
+  <footer>
+    <div class="footer-meta">
+      <p id="copyright"></p>
+      <p>Japheth James D. Lumanog &bull; Philippines</p>
+    </div>
+
+    <div class="footer-social">
+      <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+        GitHub
+      </a>
+      <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        LinkedIn
+      </a>
+      <a href="https://twitter.com/yourusername" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" focusable="false"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L1.254 2.25H8.08l4.259 5.63 5.905-5.63zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        Twitter/X
+      </a>
+    </div>
+
+    <div class="footer-modified">
+      <p id="lastModified"></p>
+    </div>
+  </footer>
+
+  <!-- ══ INLINE SCRIPT: Read GET params and populate card ══ -->
+  <script>
+    (function () {
+      const params = new URLSearchParams(window.location.search);
+
+      // Label map: [paramName, displayLabel, required]
+      const fields = [
+        ["fname",      "First Name",         true],
+        ["lname",      "Last Name",          true],
+        ["email",      "Email Address",      true],
+        ["mobile",     "Mobile Phone",       true],
+        ["org-name",   "Organization Name",  true],
+        ["timestamp",  "Submitted At",       true],
+      ];
+
+      // Membership level labels
+      const levelLabels = {
+        np:     "NP Membership (Non-Profit — Free)",
+        bronze: "Bronze Membership",
+        silver: "Silver Membership",
+        gold:   "Gold Membership",
+      };
+
+      const container = document.getElementById("submission-rows");
+      if (!container) return;
+
+      fields.forEach(([key, label]) => {
+        let value = params.get(key) || "";
+
+        // Format the ISO timestamp nicely
+        if (key === "timestamp" && value) {
+          try {
+            const d = new Date(value);
+            value = d.toLocaleString("en-PH", {
+              dateStyle: "long",
+              timeStyle: "short",
+            });
+          } catch (_) { /* keep raw if parse fails */ }
+        }
+
+        const row = document.createElement("div");
+        row.className = "submission-row";
+
+        const keyEl = document.createElement("span");
+        keyEl.className = "submission-key";
+        keyEl.textContent = label;
+
+        const valEl = document.createElement("span");
+        valEl.className = value ? "submission-val" : "submission-val empty";
+        valEl.textContent = value || "—";
+
+        row.appendChild(keyEl);
+        row.appendChild(valEl);
+        container.appendChild(row);
+      });
+
+      // Also show membership level if present
+      const membershipVal = params.get("membership");
+      if (membershipVal) {
+        const row = document.createElement("div");
+        row.className = "submission-row";
+
+        const keyEl = document.createElement("span");
+        keyEl.className = "submission-key";
+        keyEl.textContent = "Membership Level";
+
+        const valEl = document.createElement("span");
+        valEl.className = "submission-val";
+        valEl.textContent = levelLabels[membershipVal] || membershipVal;
+
+        row.appendChild(keyEl);
+        row.appendChild(valEl);
+        // Insert before last row (timestamp)
+        const rows = container.querySelectorAll(".submission-row");
+        const lastRow = rows[rows.length - 1];
+        container.insertBefore(row, lastRow);
+      }
+    })();
+  </script>
+
+</body>
+</html>
