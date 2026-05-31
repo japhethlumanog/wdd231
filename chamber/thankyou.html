@@ -18,132 +18,9 @@
   <link rel="stylesheet" href="styles/larger.css">
   <link rel="stylesheet" href="styles/join.css">
 
-  <style>
-    /* ── Thank-you page specific styles ── */
-    .thankyou-main {
-      margin: 0 auto;
-      max-width: 680px;
-      padding: 3rem 1.25rem 5rem;
-      display: flex;
-      flex-direction: column;
-      gap: 1.75rem;
-    }
-
-    .thankyou-hero {
-      text-align: center;
-      padding: 2.5rem 1.5rem;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-    }
-
-    .thankyou-icon {
-      font-size: 3rem;
-      line-height: 1;
-      margin-bottom: 1rem;
-    }
-
-    .thankyou-hero h1 {
-      font-family: var(--font-display);
-      font-size: clamp(1.8rem, 5vw, 2.8rem);
-      color: var(--text);
-      margin: 0 0 0.6rem;
-      line-height: 1.1;
-    }
-
-    .thankyou-hero p {
-      color: var(--text-muted);
-      font-size: 0.95rem;
-      max-width: 420px;
-      margin: 0 auto;
-      line-height: 1.6;
-    }
-
-    .submission-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      overflow: hidden;
-    }
-
-    .submission-card-header {
-      padding: 1.1rem 1.5rem;
-      background: var(--surface-2);
-      border-bottom: 1px solid var(--border);
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-    }
-
-    .submission-card-header h2 {
-      font-family: var(--font-display);
-      font-size: 1.05rem;
-      color: var(--text);
-      margin: 0;
-      line-height: 1;
-    }
-
-    .submission-card-label {
-      font-size: 0.65rem;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--accent);
-    }
-
-    .submission-rows {
-      padding: 0.5rem 0;
-    }
-
-    .submission-row {
-      display: flex;
-      align-items: baseline;
-      gap: 1rem;
-      padding: 0.85rem 1.5rem;
-      border-bottom: 1px solid rgba(212, 168, 83, 0.1);
-    }
-
-    .submission-row:last-child {
-      border-bottom: none;
-    }
-
-    .submission-key {
-      font-size: 0.78rem;
-      font-weight: 600;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      min-width: 130px;
-      flex-shrink: 0;
-    }
-
-    .submission-val {
-      font-size: 0.93rem;
-      color: var(--text);
-      word-break: break-word;
-    }
-
-    .submission-val.empty {
-      color: var(--text-muted);
-      font-style: italic;
-    }
-
-    .thankyou-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-      justify-content: center;
-    }
-
-    @media (min-width: 900px) {
-      .thankyou-main {
-        padding: 3.5rem 2.5rem 6rem;
-      }
-    }
-  </style>
-
   <script src="scripts/navigation.js" defer></script>
   <script src="scripts/dates.js" defer></script>
+  <script src="scripts/thankyou.js" defer></script>
 </head>
 <body>
 
@@ -188,7 +65,7 @@
         </div>
       </div>
       <div class="submission-rows" id="submission-rows">
-        <!-- populated by inline script below -->
+        <!-- populated by thankyou.js -->
       </div>
     </div>
 
@@ -226,86 +103,6 @@
       <p id="lastModified"></p>
     </div>
   </footer>
-
-  <!-- ══ INLINE SCRIPT: Read GET params and populate card ══ -->
-  <script>
-    (function () {
-      const params = new URLSearchParams(window.location.search);
-
-      // Label map: [paramName, displayLabel, required]
-      const fields = [
-        ["fname",      "First Name",         true],
-        ["lname",      "Last Name",          true],
-        ["email",      "Email Address",      true],
-        ["mobile",     "Mobile Phone",       true],
-        ["org-name",   "Organization Name",  true],
-        ["timestamp",  "Submitted At",       true],
-      ];
-
-      // Membership level labels
-      const levelLabels = {
-        np:     "NP Membership (Non-Profit — Free)",
-        bronze: "Bronze Membership",
-        silver: "Silver Membership",
-        gold:   "Gold Membership",
-      };
-
-      const container = document.getElementById("submission-rows");
-      if (!container) return;
-
-      fields.forEach(([key, label]) => {
-        let value = params.get(key) || "";
-
-        // Format the ISO timestamp nicely
-        if (key === "timestamp" && value) {
-          try {
-            const d = new Date(value);
-            value = d.toLocaleString("en-PH", {
-              dateStyle: "long",
-              timeStyle: "short",
-            });
-          } catch (_) { /* keep raw if parse fails */ }
-        }
-
-        const row = document.createElement("div");
-        row.className = "submission-row";
-
-        const keyEl = document.createElement("span");
-        keyEl.className = "submission-key";
-        keyEl.textContent = label;
-
-        const valEl = document.createElement("span");
-        valEl.className = value ? "submission-val" : "submission-val empty";
-        valEl.textContent = value || "—";
-
-        row.appendChild(keyEl);
-        row.appendChild(valEl);
-        container.appendChild(row);
-      });
-
-      // Also show membership level if present
-      const membershipVal = params.get("membership");
-      if (membershipVal) {
-        const row = document.createElement("div");
-        row.className = "submission-row";
-
-        const keyEl = document.createElement("span");
-        keyEl.className = "submission-key";
-        keyEl.textContent = "Membership Level";
-
-        const valEl = document.createElement("span");
-        valEl.className = "submission-val";
-        valEl.textContent = levelLabels[membershipVal] || membershipVal;
-
-        row.appendChild(keyEl);
-        row.appendChild(valEl);
-        // Insert before last row (timestamp)
-        const rows = container.querySelectorAll(".submission-row");
-        const lastRow = rows[rows.length - 1];
-        container.insertBefore(row, lastRow);
-      }
-    })();
-  </script>
 
 </body>
 </html>
