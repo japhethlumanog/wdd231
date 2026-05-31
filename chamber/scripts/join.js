@@ -1,42 +1,34 @@
 /**
  * join.js — Sava City Chamber of Commerce
- * Handles: timestamp generation, modal open/close
+ * Handles: timestamp generation, modal open/close via event delegation
+ * No inline event handlers — all wired here.
  */
 
 // ── Auto-stamp the hidden timestamp field on page load ──
-(function stampTimestamp() {
-  const field = document.getElementById("timestamp");
-  if (!field) return;
-  const now = new Date();
-  field.value = now.toISOString(); // ISO string for easy parsing on thankyou page
-})();
-
-// ── Modal helpers ──
-function openModal(dialogId) {
-  const dialog = document.getElementById(dialogId);
-  if (dialog && typeof dialog.showModal === "function") {
-    dialog.showModal();
-  }
+const timestampField = document.getElementById("timestamp");
+if (timestampField) {
+  timestampField.value = new Date().toISOString();
 }
 
-function closeModal(dialogId) {
-  const dialog = document.getElementById(dialogId);
-  if (dialog) {
-    dialog.close();
-  }
-}
-
-// Close any open dialog when clicking the backdrop (outside modal content)
-document.addEventListener("click", function (e) {
-  if (e.target && e.target.nodeName === "DIALOG") {
-    e.target.close();
-  }
+// ── Open modals via [data-modal] buttons ──
+document.querySelectorAll("[data-modal]").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const dialog = document.getElementById(btn.dataset.modal);
+    if (dialog) dialog.showModal();
+  });
 });
 
-// Close dialogs with Escape key (browsers handle this natively for <dialog>,
-// but we ensure our close buttons also work)
-document.addEventListener("keydown", function (e) {
-  if (e.key === "Escape") {
-    document.querySelectorAll("dialog[open]").forEach((d) => d.close());
-  }
+// ── Close modals via [data-close-modal] buttons ──
+document.querySelectorAll("[data-close-modal]").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const dialog = document.getElementById(btn.dataset.closeModal);
+    if (dialog) dialog.close();
+  });
+});
+
+// ── Close modal when clicking the backdrop ──
+document.querySelectorAll("dialog").forEach((dialog) => {
+  dialog.addEventListener("click", (e) => {
+    if (e.target === dialog) dialog.close();
+  });
 });

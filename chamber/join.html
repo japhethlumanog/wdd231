@@ -206,7 +206,7 @@
           <button
             class="btn-learn-more"
             aria-haspopup="dialog"
-            onclick="openModal('modal-np')">
+            data-modal="modal-np">
             Learn More
           </button>
         </div>
@@ -220,7 +220,7 @@
           <button
             class="btn-learn-more"
             aria-haspopup="dialog"
-            onclick="openModal('modal-bronze')">
+            data-modal="modal-bronze">
             Learn More
           </button>
         </div>
@@ -234,7 +234,7 @@
           <button
             class="btn-learn-more"
             aria-haspopup="dialog"
-            onclick="openModal('modal-silver')">
+            data-modal="modal-silver">
             Learn More
           </button>
         </div>
@@ -248,7 +248,7 @@
           <button
             class="btn-learn-more"
             aria-haspopup="dialog"
-            onclick="openModal('modal-gold')">
+            data-modal="modal-gold">
             Learn More
           </button>
         </div>
@@ -297,7 +297,7 @@
           <span class="card-tier-badge badge-np">Non-Profit</span>
           <h3 class="modal-title" id="modal-np-title">NP Membership</h3>
         </div>
-        <button class="modal-close" aria-label="Close NP Membership details" onclick="closeModal('modal-np')">✕</button>
+        <button class="modal-close" aria-label="Close NP Membership details" data-close-modal="modal-np">✕</button>
       </div>
       <hr class="modal-divider">
       <p class="modal-benefits-label">Member Benefits</p>
@@ -310,7 +310,7 @@
       </ul>
       <p class="modal-fee-note"><strong>Annual Fee: Free</strong> — for officially registered non-profit organizations only.</p>
       <div class="modal-footer">
-        <button class="btn-modal-close" onclick="closeModal('modal-np')">Got It</button>
+        <button class="btn-modal-close" data-close-modal="modal-np">Got It</button>
       </div>
     </div>
   </dialog>
@@ -323,7 +323,7 @@
           <span class="card-tier-badge badge-bronze">Bronze</span>
           <h3 class="modal-title" id="modal-bronze-title">Bronze Membership</h3>
         </div>
-        <button class="modal-close" aria-label="Close Bronze Membership details" onclick="closeModal('modal-bronze')">✕</button>
+        <button class="modal-close" aria-label="Close Bronze Membership details" data-close-modal="modal-bronze">✕</button>
       </div>
       <hr class="modal-divider">
       <p class="modal-benefits-label">Member Benefits</p>
@@ -336,7 +336,7 @@
       </ul>
       <p class="modal-fee-note"><strong>Annual Fee: ₱2,500</strong> — billed once per year.</p>
       <div class="modal-footer">
-        <button class="btn-modal-close" onclick="closeModal('modal-bronze')">Got It</button>
+        <button class="btn-modal-close" data-close-modal="modal-bronze">Got It</button>
       </div>
     </div>
   </dialog>
@@ -349,7 +349,7 @@
           <span class="card-tier-badge badge-silver">Silver</span>
           <h3 class="modal-title" id="modal-silver-title">Silver Membership</h3>
         </div>
-        <button class="modal-close" aria-label="Close Silver Membership details" onclick="closeModal('modal-silver')">✕</button>
+        <button class="modal-close" aria-label="Close Silver Membership details" data-close-modal="modal-silver">✕</button>
       </div>
       <hr class="modal-divider">
       <p class="modal-benefits-label">Member Benefits</p>
@@ -362,7 +362,7 @@
       </ul>
       <p class="modal-fee-note"><strong>Annual Fee: ₱6,000</strong> — billed once per year.</p>
       <div class="modal-footer">
-        <button class="btn-modal-close" onclick="closeModal('modal-silver')">Got It</button>
+        <button class="btn-modal-close" data-close-modal="modal-silver">Got It</button>
       </div>
     </div>
   </dialog>
@@ -375,7 +375,7 @@
           <span class="card-tier-badge badge-gold">Gold</span>
           <h3 class="modal-title" id="modal-gold-title">Gold Membership</h3>
         </div>
-        <button class="modal-close" aria-label="Close Gold Membership details" onclick="closeModal('modal-gold')">✕</button>
+        <button class="modal-close" aria-label="Close Gold Membership details" data-close-modal="modal-gold">✕</button>
       </div>
       <hr class="modal-divider">
       <p class="modal-benefits-label">Member Benefits</p>
@@ -389,7 +389,7 @@
       </ul>
       <p class="modal-fee-note"><strong>Annual Fee: ₱12,000</strong> — billed once per year.</p>
       <div class="modal-footer">
-        <button class="btn-modal-close" onclick="closeModal('modal-gold')">Got It</button>
+        <button class="btn-modal-close" data-close-modal="modal-gold">Got It</button>
       </div>
     </div>
   </dialog>
