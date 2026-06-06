@@ -1,0 +1,50 @@
+:root{
+  --primary: #2A9D8F;
+  --dark: #264653;
+  --light: #F7FEFC;
+  --muted: #6C7A89;
+}
+*{box-sizing:border-box}
+body{
+  margin:0; font-family: Roboto, system-ui, -apple-system, "Segoe UI", Arial; background:var(--light); color:var(--dark);
+  line-height:1.45;
+}
+.container{max-width:900px;margin:0 auto;padding:1.25rem}
+.site-header{background:var(--dark);color:var(--light);padding:1.25rem 0}
+.site-header h1{font-family: Montserrat, Arial, sans-serif;margin:0;font-size:1.25rem}
+.tagline{opacity:0.9;margin:0.25rem 0 0;font-size:0.95rem}
+h2{font-family: Montserrat, Arial, sans-serif;color:var(--primary);margin-top:1.25rem}
+ul{margin-left:1.1rem}
+code{background:#eef6f4;padding:0.1rem 0.3rem;border-radius:3px}
+.swatch{display:inline-block;width:1.15rem;height:1.15rem;border-radius:4px;margin-right:.5rem;border:1px solid rgba(0,0,0,0.06);vertical-align:middle}
+.swatch.primary{background:var(--primary)}
+.swatch.dark{background:var(--dark)}
+.swatch.light{background:var(--light);border:1px solid #e8f2ef}
+
+.wireframes{display:flex;flex-direction:column;gap:1rem;margin-top:0.5rem}
+.wireframe{background:#fff;padding:0.75rem;border-radius:6px;box-shadow:0 1px 0 rgba(38,70,83,0.06)}
+.wireframe h3{margin-top:0;margin-bottom:0.5rem;font-size:1rem}
+.wf-box{border:2px dashed rgba(38,70,83,0.12);padding:0.7rem;border-radius:4px;background:linear-gradient(180deg,#fff,#fbfffe);margin-bottom:0.5rem}
+.wf-row{display:flex;gap:1rem}
+.wf-col.main{flex:2}
+.wf-col.side{flex:1}
+
+.site-footer{background:var(--dark);color:var(--light);padding:0.75rem;margin-top:1.25rem}
+
+/* Responsive */
+@media(min-width:860px){
+  .wireframes{flex-direction:row}
+  .wireframe{flex:1}
+}
+
+/* utility */
+.tagline, .site-footer .container{font-size:0.95rem}
+
+/* Page-scoped rules for project-plan.html (scoped under #plan) */
+#plan{--plan-primary:#2A9D8F;--plan-accent:#264653;--plan-bg:#F7FEFC;--plan-text:#102A2A;background:var(--plan-bg);color:var(--plan-text);padding:1.25rem;max-width:900px;margin:0 auto}
+#plan h1{font-family:'DM Serif Display', serif;color:var(--plan-accent);margin-top:0}
+#plan h2{font-family:'DM Serif Display', serif;color:var(--plan-primary);margin-bottom:0.25rem}
+#plan p,#plan li{font-family:'DM Sans',system-ui,Arial,sans-serif;color:var(--plan-text)}
+.swatch{display:inline-block;width:1.05rem;height:1.05rem;border-radius:4px;margin-right:.5rem}
+.swatch.primary{background:var(--plan-primary)}
+.swatch.accent{background:var(--plan-accent)}
