@@ -1,0 +1,207 @@
+/* ═══ DISCOVER PAGE STYLES ═══ */
+
+.discover-main {
+  margin: 0 auto;
+  max-width: 1100px;
+  padding: 2rem 1.25rem 3rem;
+}
+
+/* ─ Visitor Message ─ */
+.visitor-message {
+  background: var(--surface-2);
+  border: 2px solid var(--accent);
+  border-radius: var(--radius);
+  color: var(--accent);
+  font-weight: 500;
+  margin-bottom: 2rem;
+  padding: 1.25rem;
+  text-align: center;
+}
+
+.visitor-message.first-visit {
+  background: rgba(212, 168, 83, 0.1);
+}
+
+/* ─ Discover Gallery ─ */
+.discover-gallery {
+  background: transparent;
+  border: none;
+  padding: 0;
+}
+
+.discover-gallery h2 {
+  color: var(--accent);
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+/* ─ Attractions Grid: Small Screen (320px - 640px) ─ */
+.attractions-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "card1"
+    "card2"
+    "card3"
+    "card4"
+    "card5"
+    "card6"
+    "card7"
+    "card8";
+}
+
+.attraction-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto auto 1fr auto;
+  overflow: hidden;
+  padding: 1.25rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.attraction-card:hover {
+  box-shadow: 0 8px 24px rgba(212, 168, 83, 0.15);
+  transform: translateY(-4px);
+}
+
+.attraction-card h2 {
+  color: var(--accent);
+  font-size: 1.25rem;
+  margin: 0 0 0.5rem;
+  order: 1;
+}
+
+.attraction-card figure {
+  aspect-ratio: 300 / 200;
+  background: var(--surface-2);
+  border-radius: var(--radius);
+  margin: 1rem 0 1rem;
+  order: 2;
+  overflow: hidden;
+}
+
+.attraction-card img {
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+
+.attraction-card address {
+  color: var(--text-muted);
+  display: block;
+  font-size: 0.95rem;
+  font-style: normal;
+  margin: 0.75rem 0 0.75rem;
+  order: 3;
+}
+
+.attraction-card p {
+  margin: 0.75rem 0 1rem;
+  order: 4;
+}
+
+.attraction-card button {
+  background: var(--accent);
+  border: none;
+  border-radius: var(--radius);
+  color: #0f0e0d;
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-weight: 600;
+  margin-top: auto;
+  order: 5;
+  padding: 0.7rem 1.2rem;
+  transition: background 0.3s ease;
+}
+
+.attraction-card button:hover,
+.attraction-card button:focus {
+  background: var(--accent-hover);
+}
+
+/* ─ Assign Grid Areas ─ */
+.attraction-card:nth-child(1) { grid-area: card1; }
+.attraction-card:nth-child(2) { grid-area: card2; }
+.attraction-card:nth-child(3) { grid-area: card3; }
+.attraction-card:nth-child(4) { grid-area: card4; }
+.attraction-card:nth-child(5) { grid-area: card5; }
+.attraction-card:nth-child(6) { grid-area: card6; }
+.attraction-card:nth-child(7) { grid-area: card7; }
+.attraction-card:nth-child(8) { grid-area: card8; }
+
+/* ═══ MEDIUM SCREEN (641px - 1024px) ═══ */
+@media (min-width: 641px) {
+  .attractions-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "card1 card2"
+      "card3 card4"
+      "card5 card6"
+      "card7 card8";
+    gap: 2rem;
+  }
+
+  .discover-main {
+    padding: 2.5rem 2rem 4rem;
+  }
+
+  .discover-gallery h2 {
+    font-size: 2.2rem;
+    margin-bottom: 2.5rem;
+  }
+}
+
+/* ═══ LARGE SCREEN (1025px+) ═══ */
+@media (min-width: 1025px) {
+  .attractions-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+      "card1 card2 card3"
+      "card4 card5 card6"
+      "card7 card8 card8";
+    gap: 2rem;
+  }
+
+  .discover-main {
+    padding: 3rem 2.5rem 4rem;
+  }
+
+  .discover-gallery h2 {
+    font-size: 1.8rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .attraction-card {
+    padding: 1.5rem;
+  }
+
+  /* Image hover effect for large screens only */
+  .attraction-card img {
+    transition: transform 0.3s ease, filter 0.3s ease;
+  }
+
+  .attraction-card:hover img {
+    filter: brightness(1.1) drop-shadow(0 4px 8px rgba(212, 168, 83, 0.3));
+    transform: scale(1.05);
+  }
+
+  /* Special layout for featured card (card1) */
+  .attraction-card:nth-child(1) {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto 1fr auto;
+  }
+
+  .attraction-card:nth-child(1) h2 {
+    font-size: 1.5rem;
+  }
+
+  .attraction-card:nth-child(1) figure {
+    aspect-ratio: 600 / 400;
+  }
+}
