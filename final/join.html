@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Apply to join the Sava City Chamber of Commerce with a simple membership form.">
+    <meta name="author" content="Japheth James D. Lumanog">
+    <meta property="og:title" content="Join the Sava City Chamber">
+    <meta property="og:description" content="Submit a membership application for the Sava City Chamber of Commerce.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="images/favicon.svg">
+    <title>Sava City Chamber of Commerce | Join</title>
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/site.css">
+    <script type="module" src="scripts/navigation.js"></script>
+    <script type="module" src="scripts/dates.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header>
+      <div class="header-inner">
+        <div class="logo-group">
+          <img src="images/favicon.svg" alt="Sava City Chamber logo" class="site-logo">
+          <span class="site-name">Sava City Chamber</span>
+        </div>
+        <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+      <nav id="nav-menu" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="directory.html">Directory</a></li>
+          <li><a href="join.html" class="active">Join</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="main-content">
+      <h1>Join the Chamber</h1>
+      <div class="join-layout">
+        <section>
+          <p class="section-label">Application</p>
+          <h2>Membership Form</h2>
+          <form class="form-panel" method="get" action="thankyou.html">
+            <div class="form-grid">
+              <label for="first-name">First Name
+                <input id="first-name" name="first-name" autocomplete="given-name" required>
+              </label>
+              <label for="last-name">Last Name
+                <input id="last-name" name="last-name" autocomplete="family-name" required>
+              </label>
+              <label for="email">Email
+                <input id="email" name="email" type="email" autocomplete="email" required>
+              </label>
+              <label for="phone">Mobile Phone
+                <input id="phone" name="phone" type="tel" autocomplete="tel" required>
+              </label>
+              <label for="business">Business Name
+                <input id="business" name="business" autocomplete="organization" required>
+              </label>
+              <label for="level">Membership Level
+                <select id="level" name="level" required>
+                  <option value="">Choose a level</option>
+                  <option>Non-Profit</option>
+                  <option>Bronze</option>
+                  <option>Silver</option>
+                  <option>Gold</option>
+                </select>
+              </label>
+            </div>
+            <label for="description">Business Description
+              <textarea id="description" name="description" required></textarea>
+            </label>
+            <input type="hidden" name="submitted" value="Sava City Chamber final project">
+            <input type="submit" value="Submit Application">
+          </form>
+        </section>
+
+        <aside>
+          <section>
+            <p class="section-label">Levels</p>
+            <h2>Membership Options</h2>
+            <div class="grid">
+              <article class="info-card">
+                <h3>Non-Profit</h3>
+                <p>Free listing for non-profit groups that serve the community.</p>
+              </article>
+              <article class="info-card">
+                <h3>Bronze</h3>
+                <p>Basic directory listing and regular chamber updates.</p>
+              </article>
+              <article class="info-card">
+                <h3>Silver</h3>
+                <p>Directory listing, event discounts, and added visibility.</p>
+              </article>
+              <article class="info-card">
+                <h3>Gold</h3>
+                <p>Priority promotion, spotlight opportunities, and full member benefits.</p>
+              </article>
+            </div>
+          </section>
+        </aside>
+      </div>
+    </main>
+
+    <footer>
+      <div class="footer-meta">
+        <p id="copyright"></p>
+        <p>Japheth James D. Lumanog &bull; Philippines</p>
+        <p><a href="attributions.html">Attributions</a> &bull; <a href="#">Video Demonstration</a></p>
+      </div>
+      <div class="footer-social">
+        <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://twitter.com/yourusername" target="_blank" rel="noopener noreferrer">Twitter/X</a>
+      </div>
+      <div class="footer-modified">
+        <p id="lastModified"></p>
+      </div>
+    </footer>
+  </body>
+</html>
