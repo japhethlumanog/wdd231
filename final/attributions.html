@@ -1,19 +1,75 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Attributions for the Sava City Chamber final project.">
-    <meta name="author" content="Japheth James D. Lumanog">
-    <title>Sava City Chamber of Commerce | Attributions</title>
-    <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Attributions and sources used in Scripture Explorer." />
+    <meta name="author" content="Japheth James D. Lumanog" />
+    <title>Scripture Explorer | Attributions</title>
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles/normalize.css" />
+    <link rel="stylesheet" href="styles/site.css" />
+    <script type="module" src="scripts/navigation.js"></script>
+    <script type="module" src="scripts/dates.js"></script>
   </head>
   <body>
-    <main>
-      <h1>Attributions</h1>
-      <p>Business names and descriptions are original sample content created for this WDD231 final project.</p>
-      <p>The site structure follows the student's WDD231 project plan and chamber practice pages.</p>
-      <p><a href="index.html">Return to Home</a></p>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <header>
+      <div class="header-inner">
+        <div class="logo-group">
+          <img src="images/favicon.svg" alt="Scripture Explorer logo" class="site-logo" loading="lazy" />
+          <span class="site-name">Scripture Explorer</span>
+        </div>
+        <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+      <nav id="nav-menu" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="explore.html">Explore</a></li>
+          <li><a href="study.html">Study Goals</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="main-content">
+      <section>
+        <h1>Attributions</h1>
+        <div class="attributions-content">
+          <h2>Scripture Text</h2>
+          <ul>
+            <li>Bible verses are quoted from the King James Version (KJV), which is in the public domain.</li>
+            <li>Book of Mormon, Doctrine and Covenants, and Pearl of Great Price verses are quoted from editions published by The Church of Jesus Christ of Latter-day Saints. Text is used for educational purposes.</li>
+          </ul>
+
+          <h2>Fonts</h2>
+          <ul>
+            <li><a href="https://fonts.google.com/specimen/Lora" target="_blank" rel="noopener noreferrer">Lora</a> — Google Fonts (SIL Open Font License)</li>
+            <li><a href="https://fonts.google.com/specimen/Inter" target="_blank" rel="noopener noreferrer">Inter</a> — Google Fonts (SIL Open Font License)</li>
+          </ul>
+
+          <h2>Tools &amp; Resources</h2>
+          <ul>
+            <li>Favicon designed by Japheth James D. Lumanog using SVG.</li>
+            <li>Course guidance from BYU-Idaho WDD231 Web Frontend Development.</li>
+          </ul>
+        </div>
+      </section>
     </main>
+
+    <footer>
+      <div class="footer-inner">
+        <div class="footer-links">
+          <a href="attributions.html">Attributions</a>
+          <a href="#" id="video-link">Video Demonstration</a>
+          <a href="https://github.com/japhethlumanog" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </div>
+        <p id="copyright"></p>
+        <p>Japheth James D. Lumanog &bull; Philippines</p>
+        <p id="lastModified"></p>
+      </div>
+    </footer>
   </body>
 </html>

@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Browse and filter key scripture verses from the Bible, Book of Mormon, Doctrine and Covenants, and Pearl of Great Price." />
+    <meta name="author" content="Japheth James D. Lumanog" />
+    <meta property="og:title" content="Scripture Explorer | Explore Verses" />
+    <meta property="og:description" content="Filter and explore key verses from all four standard works of scripture." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://japhethlumanog.github.io/wdd231/final/images/jesus-light-lamps.webp" />
+    <meta property="og:url" content="https://japhethlumanog.github.io/wdd231/final/explore.html" />
+    <title>Scripture Explorer | Explore Verses</title>
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles/normalize.css" />
+    <link rel="stylesheet" href="styles/site.css" />
+    <script type="module" src="scripts/navigation.js"></script>
+    <script type="module" src="scripts/dates.js"></script>
+    <script type="module" src="scripts/explore.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <header>
+      <div class="header-inner">
+        <div class="logo-group">
+          <img src="images/favicon.svg" alt="Scripture Explorer logo" class="site-logo" loading="lazy" />
+          <span class="site-name">Scripture Explorer</span>
+        </div>
+        <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+      <nav id="nav-menu" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="explore.html" class="active">Explore</a></li>
+          <li><a href="study.html">Study Goals</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="main-content">
+
+      <div class="page-section" style="padding-bottom:1rem">
+        <p class="section-eyebrow">All Standard Works</p>
+        <h1>Explore Scripture Verses</h1>
+        <p class="section-intro">Filter by book, topic, or memorization priority. Your filter preference is saved automatically.</p>
+      </div>
+
+      <div class="filter-bar">
+        <label for="book-filter">Standard Work
+          <select id="book-filter">
+            <option value="all">All Standard Works</option>
+            <option value="Bible">Bible</option>
+            <option value="Book of Mormon">Book of Mormon</option>
+            <option value="Doctrine &amp; Covenants">Doctrine &amp; Covenants</option>
+            <option value="Pearl of Great Price">Pearl of Great Price</option>
+          </select>
+        </label>
+        <label for="topic-filter">Topic
+          <select id="topic-filter">
+            <option value="all">All Topics</option>
+          </select>
+        </label>
+        <label for="memorize-filter">Priority
+          <select id="memorize-filter">
+            <option value="all">All Verses</option>
+            <option value="memorize">Memorize Only</option>
+          </select>
+        </label>
+      </div>
+
+      <div class="stats-bar">
+        Showing <strong id="total-count">0</strong> verses &nbsp;&bull;&nbsp;
+        <strong id="memorize-count">0</strong> to memorize &nbsp;&bull;&nbsp;
+        <strong id="topic-count">0</strong> topics
+      </div>
+
+      <div id="scripture-list" aria-live="polite">
+        <p style="padding:2rem;color:var(--gray-600)">Loading scriptures…</p>
+      </div>
+
+    </main>
+
+    <dialog id="verse-modal" aria-labelledby="modal-title">
+      <div class="modal-inner">
+        <div class="modal-header">
+          <h2 id="modal-title">Verse Details</h2>
+          <button class="modal-close" id="close-modal" type="button" aria-label="Close details">&times;</button>
+        </div>
+        <div id="modal-body"></div>
+      </div>
+    </dialog>
+
+    <footer>
+      <div class="footer-inner">
+        <div class="footer-links">
+          <a href="attributions.html">Attributions</a>
+          <a href="#" id="video-link">Video Demonstration</a>
+          <a href="https://github.com/japhethlumanog" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </div>
+        <p id="copyright"></p>
+        <p>Japheth James D. Lumanog &bull; Philippines</p>
+        <p id="lastModified"></p>
+      </div>
+    </footer>
+  </body>
+</html>

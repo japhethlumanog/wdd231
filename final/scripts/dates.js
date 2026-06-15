@@ -1,4 +1,4 @@
-// Footer date script used on every page.
+// dates.js — Footer copyright year and last modified date for all pages.
 const copyright = document.querySelector("#copyright");
 const lastModified = document.querySelector("#lastModified");
 
