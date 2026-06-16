@@ -3,18 +3,33 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Set your personal scripture study goals and track your progress with Scripture Explorer." />
+    <meta
+      name="description"
+      content="Set your personal scripture study goals and track your progress with Scripture Explorer."
+    />
     <meta name="author" content="Japheth James D. Lumanog" />
     <meta property="og:title" content="Scripture Explorer | Study Goals" />
-    <meta property="og:description" content="Submit your personal scripture study goal and get started with daily reading." />
+    <meta
+      property="og:description"
+      content="Submit your personal scripture study goal and get started with daily reading."
+    />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://japhethlumanog.github.io/wdd231/final/images/girls-camp.webp" />
-    <meta property="og:url" content="https://japhethlumanog.github.io/wdd231/final/study.html" />
+    <meta
+      property="og:image"
+      content="https://japhethlumanog.github.io/wdd231/final/images/girls-camp.webp"
+    />
+    <meta
+      property="og:url"
+      content="https://japhethlumanog.github.io/wdd231/final/study.html"
+    />
     <title>Scripture Explorer | Study Goals</title>
     <link rel="icon" href="images/favicon.svg" type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="styles/normalize.css" />
     <link rel="stylesheet" href="styles/site.css" />
     <script type="module" src="scripts/navigation.js"></script>
@@ -26,10 +41,20 @@
     <header>
       <div class="header-inner">
         <div class="logo-group">
-          <img src="images/favicon.svg" alt="Scripture Explorer logo" class="site-logo" loading="lazy" />
+          <img
+            src="images/favicon.svg"
+            alt="Scripture Explorer logo"
+            class="site-logo"
+            loading="lazy"
+          />
           <span class="site-name">Scripture Explorer</span>
         </div>
-        <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+        <button
+          class="hamburger"
+          id="hamburger"
+          aria-label="Toggle navigation menu"
+          aria-expanded="false"
+        >
           <span></span><span></span><span></span>
         </button>
       </div>
@@ -43,10 +68,13 @@
     </header>
 
     <main id="main-content">
-
       <!-- Page Hero -->
       <div class="page-hero">
-        <img src="images/girls-camp.webp" alt="Person writing in a journal outdoors by the water" loading="eager" />
+        <img
+          src="images/girls-camp.webp"
+          alt="Person writing in a journal outdoors by the water"
+          loading="eager"
+        />
         <div class="page-hero-overlay">
           <div class="page-hero-text">
             <p class="section-eyebrow">Personal Study</p>
@@ -56,28 +84,62 @@
       </div>
 
       <div class="study-layout">
-
         <!-- Form -->
         <div>
           <div class="study-form-header">
-            <p>Fill out the form below to record your personal scripture study goal. Your information will be displayed on the confirmation page.</p>
+            <p>
+              Fill out the form below to record your personal scripture study
+              goal. Your information will be displayed on the confirmation page.
+            </p>
           </div>
 
           <form method="get" action="thankyou.html">
             <div class="form-grid">
-              <label for="first-name">First Name
-                <input id="first-name" name="first-name" type="text" autocomplete="given-name" required placeholder="Japheth" />
+              <label for="first-name"
+                >First Name
+                <input
+                  id="first-name"
+                  name="first-name"
+                  type="text"
+                  autocomplete="given-name"
+                  required
+                  placeholder="Japheth"
+                />
               </label>
-              <label for="last-name">Last Name
-                <input id="last-name" name="last-name" type="text" autocomplete="family-name" required placeholder="Lumanog" />
+              <label for="last-name"
+                >Last Name
+                <input
+                  id="last-name"
+                  name="last-name"
+                  type="text"
+                  autocomplete="family-name"
+                  required
+                  placeholder="Lumanog"
+                />
               </label>
-              <label for="email">Email Address
-                <input id="email" name="email" type="email" autocomplete="email" required placeholder="you@example.com" />
+              <label for="email"
+                >Email Address
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  autocomplete="email"
+                  required
+                  placeholder="you@example.com"
+                />
               </label>
-              <label for="phone">Phone Number
-                <input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="+63 912 345 6789" />
+              <label for="phone"
+                >Phone Number
+                <input
+                  id="phone"
+                  name="phone"
+                  type="tel"
+                  autocomplete="tel"
+                  placeholder="+63 912 345 6789"
+                />
               </label>
-              <label for="standard-work">Favorite Standard Work
+              <label for="standard-work"
+                >Favorite Standard Work
                 <select id="standard-work" name="standard-work" required>
                   <option value="">Choose one</option>
                   <option>Bible</option>
@@ -86,7 +148,8 @@
                   <option>Pearl of Great Price</option>
                 </select>
               </label>
-              <label for="frequency">Study Frequency
+              <label for="frequency"
+                >Study Frequency
                 <select id="frequency" name="frequency" required>
                   <option value="">Choose frequency</option>
                   <option>Daily</option>
@@ -94,14 +157,30 @@
                   <option>Weekly</option>
                 </select>
               </label>
-              <label class="full" for="favorite-verse">Favorite Verse or Reference
-                <input id="favorite-verse" name="favorite-verse" type="text" placeholder="e.g. John 3:16, Moroni 10:4" />
+              <label class="full" for="favorite-verse"
+                >Favorite Verse or Reference
+                <input
+                  id="favorite-verse"
+                  name="favorite-verse"
+                  type="text"
+                  placeholder="e.g. John 3:16, Moroni 10:4"
+                />
               </label>
             </div>
-            <label for="goal-notes">My Study Goal
-              <textarea id="goal-notes" name="goal-notes" required placeholder="I want to read the Book of Mormon in 6 months because…"></textarea>
+            <label for="goal-notes"
+              >My Study Goal
+              <textarea
+                id="goal-notes"
+                name="goal-notes"
+                required
+                placeholder="I want to read the Book of Mormon in 6 months because…"
+              ></textarea>
             </label>
-            <input type="hidden" name="submitted" value="Scripture Explorer WDD231 Final" />
+            <input
+              type="hidden"
+              name="submitted"
+              value="Scripture Explorer WDD231 Final"
+            />
             <input type="submit" value="Submit My Goal" />
           </form>
         </div>
@@ -109,25 +188,36 @@
         <!-- Tips Sidebar -->
         <aside class="study-tips" aria-label="Study tips">
           <p class="section-eyebrow">Study Tips</p>
-          <h2 style="margin-bottom:1rem">How to Study Effectively</h2>
+          <h2 class="tips-heading">How to Study Effectively</h2>
           <div class="tip-item">
             <h3>Set a Consistent Time</h3>
-            <p>Pick a time each day — morning is ideal. Even 10 minutes builds a lasting habit.</p>
+            <p>
+              Pick a time each day — morning is ideal. Even 10 minutes builds a
+              lasting habit.
+            </p>
           </div>
           <div class="tip-item">
             <h3>Write It Down</h3>
-            <p>Keep a journal of impressions and insights you receive while reading.</p>
+            <p>
+              Keep a journal of impressions and insights you receive while
+              reading.
+            </p>
           </div>
           <div class="tip-item">
             <h3>Pray First</h3>
-            <p>Ask Heavenly Father to help you understand and apply what you read.</p>
+            <p>
+              Ask Heavenly Father to help you understand and apply what you
+              read.
+            </p>
           </div>
           <div class="tip-item">
             <h3>Mark Key Verses</h3>
-            <p>Highlight verses that stand out. Return to them often and share them with others.</p>
+            <p>
+              Highlight verses that stand out. Return to them often and share
+              them with others.
+            </p>
           </div>
         </aside>
-
       </div>
     </main>
 
@@ -136,7 +226,12 @@
         <div class="footer-links">
           <a href="attributions.html">Attributions</a>
           <a href="#" id="video-link">Video Demonstration</a>
-          <a href="https://github.com/japhethlumanog" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a
+            href="https://github.com/japhethlumanog"
+            target="_blank"
+            rel="noopener noreferrer"
+            >GitHub</a
+          >
         </div>
         <p id="copyright"></p>
         <p>Japheth James D. Lumanog &bull; Philippines</p>
