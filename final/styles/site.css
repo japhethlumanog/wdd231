@@ -525,3 +525,11 @@ footer p, footer a { font-size: .825rem; color: rgba(255,255,255,.65); }
   #scripture-list { grid-template-columns: 1fr 1fr 1fr; }
   .hero { min-height: 560px; }
 }
+.feature-cta { margin-top: 1.75rem; }
+
+/* --- UTILITY CLASSES (replacing inline styles) --- */
+.page-section--tight { padding-bottom: 1rem; }
+.list-loading { padding: 2rem; color: var(--gray-600); }
+.tips-heading { margin-bottom: 1rem; }
+.no-data { color: var(--gray-600); }
+.result-cta { margin-top: 1.5rem; }
