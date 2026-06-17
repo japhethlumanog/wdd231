@@ -1,5 +1,3 @@
-// explore.js — Fetch scriptures, render cards, filter, modal, localStorage.
-
 const list = document.querySelector("#scripture-list");
 const bookFilter = document.querySelector("#book-filter");
 const topicFilter = document.querySelector("#topic-filter");
@@ -14,7 +12,6 @@ const modalBody = document.querySelector("#modal-body");
 
 let allScriptures = [];
 
-// Badge class per book
 function badgeClass(book) {
   if (book === "Bible") return "badge-bible";
   if (book === "Book of Mormon") return "badge-bom";
@@ -22,7 +19,6 @@ function badgeClass(book) {
   return "badge-pogp";
 }
 
-// Build topic filter options from data
 function buildTopicFilter(scriptures) {
   const topics = [...new Set(scriptures.map((s) => s.topic))].sort();
   topics.forEach((topic) => {
@@ -33,7 +29,6 @@ function buildTopicFilter(scriptures) {
   });
 }
 
-// Update stat pills
 function updateStats(filtered) {
   totalCount.textContent = filtered.length;
   memorizeCount.textContent = filtered.filter((s) => s.memorize).length;
@@ -41,7 +36,6 @@ function updateStats(filtered) {
   topicCount.textContent = topics.size;
 }
 
-// Render scripture cards
 function renderCards(scriptures) {
   if (scriptures.length === 0) {
     list.innerHTML = `<p style="color:var(--gray-600)">No verses match your filters. Try adjusting the options above.</p>`;
@@ -74,7 +68,6 @@ function renderCards(scriptures) {
 
   updateStats(scriptures);
 
-  // Attach modal open listeners
   list.querySelectorAll(".card-btn").forEach((btn) => {
     btn.addEventListener("click", () => {
       const ref = btn.dataset.ref;
@@ -83,7 +76,6 @@ function renderCards(scriptures) {
   });
 }
 
-// Open modal with full verse details
 function openModal(ref) {
   const verse = allScriptures.find((s) => s.reference === ref);
   if (!verse || !modal) return;
@@ -102,13 +94,11 @@ function openModal(ref) {
   modal.showModal();
 }
 
-// Filter and re-render
 function applyFilters() {
   const book = bookFilter.value;
   const topic = topicFilter.value;
   const mem = memorizeFilter.value;
 
-  // Save preferences to localStorage
   localStorage.setItem("se-book-filter", book);
   localStorage.setItem("se-topic-filter", topic);
   localStorage.setItem("se-memorize-filter", mem);
@@ -123,7 +113,6 @@ function applyFilters() {
   renderCards(filtered);
 }
 
-// Restore saved filter preferences from localStorage
 function restoreFilters() {
   const savedBook = localStorage.getItem("se-book-filter");
   const savedTopic = localStorage.getItem("se-topic-filter");
@@ -134,7 +123,6 @@ function restoreFilters() {
   if (savedMem) memorizeFilter.value = savedMem;
 }
 
-// Fetch data and initialise
 async function init() {
   try {
     const response = await fetch("data/scriptures.json");
@@ -150,7 +138,6 @@ async function init() {
   }
 }
 
-// Event listeners
 bookFilter.addEventListener("change", applyFilters);
 topicFilter.addEventListener("change", applyFilters);
 memorizeFilter.addEventListener("change", applyFilters);
